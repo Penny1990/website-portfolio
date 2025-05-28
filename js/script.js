@@ -122,3 +122,6 @@ arrowLeft.addEventListener('click', () => {
 
   activePortfolio();
 });
+
+
+

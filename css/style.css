@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
 * {
-    font-family: 'Gruppo', sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,7 +39,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 9%;
+    padding: .8rem 9%;
     background: var(--bgcolor);
     display: flex;
     justify-content: space-between;
@@ -157,14 +158,15 @@ section.active {
 
 .home {
     display: flex;
-    align-items: center;
-    gap: 5rem;
-    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .homecontent {
-    width: 70vh;
-    height: 30vh;
+    flex: 1;
+    padding-top: 10rem;
+    box-sizing: border-box;
 }
 
 .homecontent h1 {
@@ -174,7 +176,6 @@ section.active {
 
 
 .homecontent h2 {
-    display: inline-block;
     font-size: 3.2rem;
     margin-top: .5rem;
 }
@@ -242,6 +243,7 @@ section.active {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    margin-top: 6rem;
 }
 
 .homeimage .imagebox::before,
@@ -284,56 +286,63 @@ section.active {
     display: block;
     width: 85%;
     object-fit: cover;
-    
 }
 
 
 /* Bildung */
 
-.heading {
-    font-size: 4.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.heading span {
-    color: var(--maincolor);
-}
-
 .profilecontainer {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 5rem;
+    grid-template-rows: auto 1fr;
+    gap: 2rem;
+    max-height: 600px;
 }
 
-.profilebox h2 {
-    font-size: 4.5rem;
+.profilebox {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    max-height: 600px;
 }
 
-.profilebox p {
-    font-size: 1.6rem;
+.buttonbox {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-self: end;
 }
 
-.profilebox .desc {
-    margin: 2rem 0 2.5rem;
-}
-
-.profilebox .profilebutton {
+.buttonbox .profilebutton {
+    display: end;
     width: 100%;
-    height: 5.3rem;
+    height: 5rem;
     background: var(--secondbgcolor);
     border: .2rem solid var(--secondbgcolor);
     font-size: 1.6rem;
     color: var(--whitecolor);
-    font-weight: 500;
-    margin-bottom: 2rem;
+    font-weight: 400;
+    margin-bottom: .6rem;
     border-radius: .8rem;
     cursor: pointer;
 }
 
-.profilebox .profilebutton.active {
+.buttonbox .profilebutton.active {
     border-color: var(--maincolor);
     color: var(--maincolor);
+}
+
+.profilebox .desc {
+    font-size: 1.5rem;
+    margin: 2rem 0 2.5rem;
+    text-align: center;
+}
+
+.profilebox .heading {
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-align: center;
 }
 
 .profiledetail {
@@ -342,11 +351,6 @@ section.active {
 
 .profiledetail.active {
     display: block;
-}
-
-.profilebox .heading {
-    font-size: 3.5rem;
-    text-align: left;
 }
 
 .profilelist {
@@ -366,7 +370,6 @@ section.active {
     border-radius: 1rem;
 }
 
-
 .profilelist .profileitem {
     background: var(--secondbgcolor);
     border-radius: .8rem;
@@ -379,16 +382,19 @@ section.active {
 
 .profileitem .year {
     color: var(--maincolor);
+    font-weight: 570;
+    font-size: 1.1rem;
 }
 
 .profileitem h3 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
 }
 
 .profileitem .company {
     position: relative;
     margin-left: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.3rem;
+    margin-top: .8rem;
 }
 
 .profileitem .company::before {
@@ -405,9 +411,13 @@ section.active {
 
 /* Skills */
 
-.skills .heading {
+.profiledetail.skills .heading {
     font-size: 3.5rem;
     margin-bottom: 2rem;
+}
+
+.profiledetail.skills .desc {
+    font-size: 1.3rem;
 }
 
 .profiledetail.skills .profilelist {
@@ -428,8 +438,6 @@ section.active {
 
 .profiledetail.skills .skillitem:hover {
     color: var(--maincolor);
-    /* farben änder indem skillitem in div. kategorien
-    geändert wird mit den farben*/
 }
 
 .profiledetail.skills .skillitem span {
@@ -454,28 +462,30 @@ section.active {
 
 
 
+
+
 /* About me */
 
-.profiledetail.about .profilelist {
-    height: auto;
-    grid-template-columns: repeat(auto-fit, minimax(25rem, 1fr));
+.mindset {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    border: .2rem solid var(--maincolor);
+    border-radius: .8rem;
+    padding: 1rem;
+    padding-top: .5rem;
+    box-shadow: 0 0 1.1rem var(--maincolor);
 }
 
-.profiledetail.about .profileitem {
-    height: auto;
-    padding: 0 0 .5rem;
-    background: transparent;
+.mindset h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 500;
 }
 
-.profiledetail.about .profileitem p {
-    color: var(--maincolor);
+.mindset p {
+    font-size: 1.1rem;
 }
 
-.profiledetail.about .profileitem p span {
-    color: var(--whitecolor);
-    margin-left: 1rem;
-    font-size: 1.8rem;
-}
 
 
 
@@ -497,7 +507,7 @@ section.active {
 
 .portfoliobox .number {
     font-size: 8rem;
-    -webkit-text-stroke: .07rem var(--whitecolor);
+    -webkit-text-stroke: .1rem var(--maincolor);
     color: transparent;
     line-height: 1;
 }
@@ -527,6 +537,7 @@ section.active {
     border-radius: 50%;
     background: var(--secondbgcolor);
     transition: .5s;
+    border: .2rem solid var(--maincolor);
 }
 
 .portfoliobox .github a:hover {
@@ -557,9 +568,11 @@ section.active {
 
 .portfoliobox .portfoliocarousel {
     width: 100%;
-    height: 45rem;
+    height: 42rem;
     border-radius: 1rem;
     overflow: hidden;
+    border: .2rem solid var(--maincolor);
+    box-shadow: 0 0 1rem var(--maincolor);
 }
 
 .portfoliocarousel .imageslide {
@@ -580,7 +593,7 @@ section.active {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: .8rem;
 }
 
 .portfoliobox .navigation {
@@ -612,56 +625,27 @@ section.active {
 
 /* Kontakt */
 
-.contactcontainer {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-}
-
-.contactcontainer .contactbox:first-child {
-    align-self: center;
-}
-
-.contactbox h2 {
-    font-size: 4.5rem;
-}
-
-.contactbox p {
-    font-size: 1.6rem;
-}
-
-.contactbox .desc {
-    margin: 1.5rem 0 2.5rem;
-}
-
-.contactbox .contactdetail {
+.contactbox {
     display: flex;
-    align-items: center;
-    margin: 2rem 0;
-}
-
-.contactdetail i {
-    display: inline-flex;
-    background: var(--secondbgcolor);
-    color: var(--maincolor);
-    font-size: 3rem;
-    padding: 1.2rem;
-    border-radius: .6rem;
-    margin-right: 1.5rem;
-}
-
-.contactdetail .detail p:first-child {
-    color: var(--maincolor);
+    justify-content: center;
 }
 
 .contactbox form {
+    width: 80vw;
+    max-width: 700px;
+    height: auto;
     background: var(--secondbgcolor);
-    padding: 2.5rem 3.5rem 3.5rem;
-    border-radius: 1rem;
+    padding: 1.5rem 2rem 2rem;
+    border-radius: .8rem;
     text-align: center;
+    box-sizing: border-box;
+    border: .2rem solid var(--maincolor);
+    box-shadow: 0 0 1rem var(--maincolor);
 }
 
 .contactbox .heading {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    font-weight: 600;
 }
 
 .contactbox .fieldbox {
@@ -672,15 +656,18 @@ section.active {
 
 .contactbox .fieldbox textarea {
     grid-column: 1 / -1;
+    height: 120px;
+    resize: vertical;
+    overflow-y: auto;
 }
 
 .contactbox .fieldbox input,
 .contactbox .fieldbox textarea {
-    padding: 1.5rem;
+    padding: 1rem;
     background: var(--bgcolor);
     border: .15rem solid var(--bgcolor);
     border-radius: .6rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--whitecolor);
 }
 
@@ -804,6 +791,16 @@ section.active {
         text-align: center;
     }
 
+    .homecontent {
+        width: 90vw;       /* mehr Platz */
+        max-width: none;   /* keine Beschränkung */
+        text-align: center; /* zentrieren */
+      }
+      .homecontent h2 {
+        display: block;    /* block nehmen, damit die volle Breite genutzt wird */
+        margin: 0 auto;    /* zentriert */
+      }
+
     .homeimage .imagebox {
         width: 35rem;
         height: 35rem;
@@ -919,19 +916,11 @@ section.active {
     }
 }
 
-/*1920px*/
-@media screen and (min-width: 1920px) {
-    html {
-        font-size: 90%;
-    }
-}
-
 /*2560px*/
 @media screen and (min-width: 2560px) {
     html {
         font-size: 120%;
     }
 
-
-    
 }
+
