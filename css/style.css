@@ -17,7 +17,7 @@
     --whitecolor: #f0f0f0;
     --maincolor:  #ff00cc;
     --disabledcolor: grey;
-    --bgcolor2: #7a7a7a;
+    --bgcolor2: #242424;
     --hover-color: #ff33dd;
 
 }
@@ -40,7 +40,7 @@ header {
     left: 0;
     width: 100%;
     padding: .8rem 9%;
-    background: var(--bgcolor);
+    background: var(--secondbgcolor);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -197,7 +197,7 @@ section.active {
     background: var(--maincolor);
     border: .2rem solid var(--maincolor);
     border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--maincolor);
+    box-shadow: 0 0 .5rem var(--maincolor);
     font-size: 1.6rem;
     color: var(--bgcolor);
     font-weight: 500;
@@ -208,6 +208,7 @@ section.active {
     background: transparent;
     color: var(--maincolor);
     box-shadow: none;
+    box-shadow: 0 0 1rem var(--maincolor);
 }
 
 .homecontent .button .sci {
@@ -221,6 +222,7 @@ section.active {
     border-radius: 50%;
     font-size: 2rem;
     color: var(--maincolor);
+    box-shadow: 0 0 .4rem var(--maincolor);
     margin: 0 .8rem;
     transition: .5s;
 }
@@ -289,29 +291,83 @@ section.active {
 }
 
 
+/* About */
+
+.aboutcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    padding-top: 8rem;
+}
+
+.mindset {
+    max-width: 680px;
+    width: 100%;
+    border: .2rem solid var(--maincolor);
+    border-radius: .8rem;
+    padding: 1rem;
+    padding-top: .5rem;
+    box-shadow: 0 0 1.1rem var(--maincolor);
+}
+
+.mindset h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.mindset p {
+    font-size: 1.1rem;
+}
+
+
+
+
 /* Bildung */
 
 .profilecontainer {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr;
     gap: 2rem;
-    max-height: 600px;
+    height: 700px;
 }
 
 .profilebox {
     grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    max-height: 600px;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+    padding: 1rem;
 }
 
 .buttonbox {
-    grid-column: 1 / 2;
+    grid-column: 1;
     grid-row: 1 / 2;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
-    align-self: end;
+    height: 100%;
+    
+}
+
+.buttonbox .desc {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    border: .1rem solid var(--maincolor);
+    border-radius: .8rem;
+    padding: 1.8rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 1rem var(--maincolor);
 }
 
 .buttonbox .profilebutton {
@@ -331,12 +387,6 @@ section.active {
 .buttonbox .profilebutton.active {
     border-color: var(--maincolor);
     color: var(--maincolor);
-}
-
-.profilebox .desc {
-    font-size: 1.5rem;
-    margin: 2rem 0 2.5rem;
-    text-align: center;
 }
 
 .profilebox .heading {
@@ -463,32 +513,6 @@ section.active {
 
 
 
-
-/* About me */
-
-.mindset {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    border: .2rem solid var(--maincolor);
-    border-radius: .8rem;
-    padding: 1rem;
-    padding-top: .5rem;
-    box-shadow: 0 0 1.1rem var(--maincolor);
-}
-
-.mindset h2 {
-    font-size: 3.5rem;
-    text-align: center;
-    font-weight: 500;
-}
-
-.mindset p {
-    font-size: 1.1rem;
-}
-
-
-
-
 /* Portfolio */
 
 .portfoliocontainer {
@@ -507,9 +531,16 @@ section.active {
 
 .portfoliobox .number {
     font-size: 8rem;
-    -webkit-text-stroke: .1rem var(--maincolor);
+    -webkit-text-stroke: .2rem var(--maincolor);
     color: transparent;
     line-height: 1;
+}
+
+.portfolio .heading {
+    font-size: 5rem;
+    text-align: center;
+    padding-bottom: 2rem;
+
 }
 
 .portfoliobox h3 {
@@ -607,7 +638,7 @@ section.active {
     background: var(--secondbgcolor);
     border: .2rem solid var(--maincolor);
     border-radius: .6rem;
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--maincolor);
     cursor: pointer;
 }
@@ -618,7 +649,7 @@ section.active {
 }
 
 .portfoliobox .navigation .arrowright {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
 }
 
 
