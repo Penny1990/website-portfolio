@@ -170,8 +170,9 @@ section.active {
 }
 
 .homecontent h1 {
-    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    font-size: clamp(4.5rem, 10vw, 5.5rem);
     color: var(--maincolor);
+    font-weight: 700;
 }
 
 
@@ -207,7 +208,6 @@ section.active {
 .buttons:hover {
     background: transparent;
     color: var(--maincolor);
-    box-shadow: none;
     box-shadow: 0 0 1rem var(--maincolor);
 }
 
@@ -306,19 +306,20 @@ section.active {
     width: 100%;
     border: .2rem solid var(--maincolor);
     border-radius: .8rem;
-    padding: 1rem;
-    padding-top: .5rem;
+    padding: 2rem;
+    padding-top: .8rem;
     box-shadow: 0 0 1.1rem var(--maincolor);
 }
 
-.mindset h2 {
+.mindset h1 {
     font-size: 3.5rem;
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
+    margin-bottom: .8rem;
 }
 
 .mindset p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 
@@ -358,16 +359,20 @@ section.active {
 }
 
 .buttonbox .desc {
-    display: flex;
+    
     justify-content: center;
     text-align: center;
     width: 100%;
     font-size: 2rem;
-    border: .1rem solid var(--maincolor);
+    border: .2rem solid var(--maincolor);
     border-radius: .8rem;
     padding: 1.8rem;
     margin-bottom: 3rem;
     box-shadow: 0 0 1rem var(--maincolor);
+}
+
+.buttonbox .desc span {
+    font-weight: 600;
 }
 
 .buttonbox .profilebutton {
@@ -397,6 +402,7 @@ section.active {
 
 .profiledetail {
     display: none;
+    width: 100%;
 }
 
 .profiledetail.active {
@@ -405,10 +411,26 @@ section.active {
 
 .profilelist {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 80rem;
+    margin: 0;
     height: 45rem;
-    overflow: auto;
+    overflow-y: auto;
+}
+
+.profiledetail.skills .profilelist .profileitem {
+    height: 25rem;
+}
+
+.profiledetail.school .profilelist .profileitem {
+    height: 17rem;
+}
+
+.profiledetail.work .profilelist .profileitem {
+    height: 17rem;
 }
 
 .profilelist::-webkit-scrollbar {
@@ -421,95 +443,66 @@ section.active {
 }
 
 .profilelist .profileitem {
+    width: 100%;
     background: var(--secondbgcolor);
     border-radius: .8rem;
-    padding: 3rem 2.5rem;
-    height: calc((45rem - 2rem) / 2);
+    padding: 2.5rem 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.profileitem .year {
-    color: var(--maincolor);
-    font-weight: 570;
-    font-size: 1.1rem;
-}
-
 .profileitem h3 {
-    font-size: 1.8rem;
+    font-size: 2.3rem;
+    font-weight: 550;
 }
 
-.profileitem .company {
-    position: relative;
-    margin-left: 2rem;
-    margin-bottom: 1.3rem;
+.profileitem .inlinerow {
+    font-size: 1.05rem;
     margin-top: .8rem;
+    margin-bottom: 1rem;
 }
 
-.profileitem .company::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: .5rem;
-    background: var(--maincolor);
-    border-radius: 50%;
-    margin-left: -2rem;
+.profileitem time {
+    color: var(--maincolor);
 }
+
+.profileitem p {
+    font-size: 1.2rem;
+}
+
+
+
 
 
 /* Skills */
 
-.profiledetail.skills .heading {
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
+
+
+.profileitem ul {
+  list-style: none;
+  padding-left: .1rem;
+  margin-top: 1rem;
 }
 
-.profiledetail.skills .desc {
-    font-size: 1.3rem;
+.profileitem ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+  font-size: 1.1rem;
 }
 
-.profiledetail.skills .profilelist {
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    height: auto;
-    overflow: visible;
+.profileitem ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  color: var(--maincolor);
 }
-
-.profiledetail.skills .skillitem {
-    position: relative;
-    align-items: center;
-    height: auto;
-}
-
-.profiledetail.skills .skillitem i {
-    font-size: 8.5rem;
-}
-
-.profiledetail.skills .skillitem:hover {
-    color: var(--maincolor);
-}
-
-.profiledetail.skills .skillitem span {
-    position: absolute;
-    top: -20%;
-    background: var(--whitecolor);
-    color: var(--bgcolor);
-    font-size: 1.6rem;
-    padding: .5rem 1rem;
-    border-radius: .6rem;
-    pointer-events: none;
-    opacity: 0;
-    transform: scale(.9);
-    transition: .2s;
-}
-
-.profiledetail.skills .skillitem:hover span {
-    top: -25%;
-    opacity: 1;
-    transform: scale(1);
-}
-
 
 
 
@@ -519,6 +512,7 @@ section.active {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
+    padding-top: 2rem;
 }
 
 .portfoliodetail {
@@ -530,26 +524,20 @@ section.active {
 }
 
 .portfoliobox .number {
-    font-size: 8rem;
+    font-size: 7rem;
     -webkit-text-stroke: .2rem var(--maincolor);
     color: transparent;
     line-height: 1;
 }
 
-.portfolio .heading {
-    font-size: 5rem;
-    text-align: center;
-    padding-bottom: 2rem;
-
-}
-
 .portfoliobox h3 {
     font-size: 3.5rem;
     margin: .8rem 0 2rem;
+    font-weight: 600;
 }
 
 .portfoliobox p {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .portfoliobox .tech {
@@ -562,17 +550,19 @@ section.active {
 .portfoliobox .github a {
     position: relative;
     display: inline-flex;
-    padding: 1.3rem;
-    font-size: 3rem;
+    padding: 1rem;
+    font-size: 2.5rem;
     color: var(--whitecolor);
     border-radius: 50%;
     background: var(--secondbgcolor);
     transition: .5s;
     border: .2rem solid var(--maincolor);
+    box-shadow: 0 0 .5rem var(--maincolor);
 }
 
 .portfoliobox .github a:hover {
     color: var(--maincolor);
+    box-shadow: 0 0 1rem var(--maincolor);
 }
 
 .portfoliobox .github a span {
@@ -638,7 +628,7 @@ section.active {
     background: var(--secondbgcolor);
     border: .2rem solid var(--maincolor);
     border-radius: .6rem;
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: var(--maincolor);
     cursor: pointer;
 }
