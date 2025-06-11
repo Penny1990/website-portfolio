@@ -15,14 +15,14 @@
 ## Geplante Inhalte
 
 Seiten:
-- [ ] Startseite
-- [ ] Über mich
-- [ ] Bildung
-- [ ] Portfolio / Projekte
-- [ ] Kontakt
+- [x] Startseite
+- [x] Über mich
+- [x] Bildung
+- [x] Portfolio / Projekte
+- [x] Kontakt
 
 Effekte:
-- [ ] Hover Effekte
+- [x] Hover Effekte
 - [ ] Übergänge
 - [ ] Texteffekte
 
