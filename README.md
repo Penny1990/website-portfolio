@@ -9,6 +9,7 @@
 - HTML
 - CSS
 - JavaScript
+- PHP
 
 <br>
 
@@ -16,19 +17,26 @@
 
 ### Pages:
 
-- [ ] Home
-- [ ] About Me
-- [ ] Education
-- [ ] Portfolio / Projects
-- [ ] Contact
+- [x] Home
+- [x] About Me
+- [x] Education
+- [x] Portfolio / Projects
+- [x] Contact
 
 <br>
 
 ### Effects:
 
-- [ ] Hover effects
+- [x] Hover effects
 - [ ] Transitions
 - [ ] Text animations
+
+<br>
+
+## Database:
+
+- [ ] Downloadbutton CV
+- [ ] Contact
 
 <br><br>
 
