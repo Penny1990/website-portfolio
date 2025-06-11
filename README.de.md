@@ -26,6 +26,13 @@ Effekte:
 - [ ] Übergänge
 - [ ] Texteffekte
 
+<br>
+
+## Datenbank
+
+- [ ] Download Schaltfläche Lebenslauf
+- [ ] Kontakt
+
 <br><br>
 
 Dies ist ein persönliches Projekt. Alle Rechte vorbehalten.
