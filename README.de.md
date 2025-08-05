@@ -30,8 +30,8 @@ Effekte:
 
 ## Datenbank
 
-- [ ] Download Schaltfläche Lebenslauf
-- [ ] Kontakt
+- [x] Download Schaltfläche Lebenslauf
+- [x] Kontakt
 
 <br><br>
 
