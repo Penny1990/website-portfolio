@@ -35,8 +35,8 @@
 
 ## Database:
 
-- [ ] Downloadbutton CV
-- [ ] Contact
+- [x] Downloadbutton CV
+- [x] Contact
 
 <br><br>
 
