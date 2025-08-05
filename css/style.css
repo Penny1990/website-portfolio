@@ -249,6 +249,50 @@ section.active {
 }
 
 
+/* Home QR */
+
+.qr-gruss {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aqua;
+    border: 2px solid purple;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    z-index: 9999;
+    text-align: center;
+    
+}
+
+
+.qr-gruss h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+.qr-gruss p {
+    font-size: 14px;
+    color: blue;
+}
+
+.qr-gruss button {
+    background-color: orange;
+    color: #f0f0f0;
+    border: none;
+    padding: 6px 12px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.qr-gruss button:hover {
+    background-color: aqua;
+}
+
+
 /* About */
 
 .aboutcontainer {
@@ -671,7 +715,7 @@ section.active {
 }
 
 
-/* Footer */
+/* Footer
 
 .footer {
     position: relative;
@@ -696,14 +740,145 @@ section.active {
     padding: .8rem;
     background: var(--maincolor);
     border: .2rem solid var(--maincolor);
-}
+} */ 
+
+
+
 
 /* Breakpoints*/
 
+/*1440px*/
+@media screen and (max-width: 1440px) {
+    .home {
+        padding: 0 4rem;
+        gap: 30px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+        margin: 0 auto;
+        max-width: none;
+    }
+
+    .homecontent {
+        padding-top: 0;
+    }
+
+    .homecontent h1 {
+        font-size: clamp(4.2rem, 9vw, 5.2rem);
+    }
+
+    .homecontent h2 {
+        font-size: 3rem;
+        margin-top: .4rem;
+    }
+
+    .homecontent p {
+        font-size: 1.5rem;
+        margin: 0.9rem 0 2.2rem;
+        max-width: 650px;
+    }
+
+    .homecontent .button {
+        gap: 1.8rem;
+    }
+
+    .buttons {
+        padding: 0.95rem 2.9rem;
+        font-size: 1.5rem;
+    }
+
+    .homecontent .button .sci a {
+        padding: .75rem;
+        font-size: 1.9rem;
+    }
+
+    .homeimage .imagebox {
+        width: 33vw;
+        height: 33vw;
+        max-width: 500px;
+        max-height: 500px;
+        margin-top: 0;
+    }
+
+    .homeimage .imagebox::before,
+    .homeimage .imagebox::after {
+        width: 45rem;
+        height: 45rem;
+    }
+
+    .homeimage .imagebox .imageitem img {
+        top: 2.5rem;
+        width: 82%;
+    }
+}
+
+
 /*1200px*/
 @media screen and (max-width: 1200px) {
-    html {
-        font-size: 55%;
+    
+    .home {
+        gap: 15px;
+        padding: 0 4rem;
+        min-height: 100vh; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .homecontent {
+        padding-top: 0; 
+    }
+
+    .homecontent h1 {
+        font-size: clamp(4rem, 8vw, 5rem);
+    }
+
+    .homecontent h2 {
+        font-size: 2.5rem;
+        margin-top: .4rem;
+    }
+
+    .homecontent p {
+        font-size: 1.125rem;
+        margin: 0.8rem 0 2rem;
+        max-width: 600px;
+    }
+
+    .homecontent .button {
+        gap: 1.5rem;
+    }
+
+    .buttons {
+        padding: 0.9rem 2.8rem;
+        font-size: 1rem;
+    }
+
+    .homecontent .button .sci a {
+        padding: .7rem;
+        font-size: 1.25rem;
+    }
+
+    .homeimage .imagebox {
+        width: 35vw;
+        height: 35vw;
+        max-width: 450px;
+        max-height: 450px;
+        margin-top: 0; 
+    }
+
+    .homeimage .imagebox::before,
+    .homeimage .imagebox::after {
+        width: 40rem;
+        height: 40rem;
+    }
+
+    .homeimage .imagebox .imageitem img {
+        top: 2rem;
+        width: 80%;
     }
 }
 
@@ -712,25 +887,15 @@ section.active {
     html {
         font-size: 70%;
     }
-}
 
-/*992*/
-@media screen and (max-width: 992px) {
-    header {
-        padding: 2rem 4%;
-    }
-
-    section {
-        padding: 10rem 4% 2rem;
+    .homeimage .imagebox .imageitem img {
+        /* HIER IST DIE ANPASSUNG */
+        top: 1rem; /* Leicht nach oben verschieben, falls es zu weit unten ist */
+        width: 90%; /* WICHTIG: Erhöht die Größe des Bildes im Kreis */
     }
 }
 
-/*810px*/
-@media screen and (max-width: 810px) {
-    .contactbox .fieldbox {
-        grid-template-columns: 1fr;
-    }
-}
+
 
 /*768px*/
 @media screen and (max-width: 768px) {
@@ -764,6 +929,7 @@ section.active {
         flex-direction: column-reverse;
         justify-content: center;
         gap: 2rem;
+        padding-top: 15rem;
     }
 
     .homecontent,
@@ -778,11 +944,20 @@ section.active {
         width: 90vw;       /* mehr Platz */
         max-width: none;   /* keine Beschränkung */
         text-align: center; /* zentrieren */
-      }
-      .homecontent h2 {
+    }
+    
+    .homecontent h2 {
         display: block;    /* block nehmen, damit die volle Breite genutzt wird */
         margin: 0 auto;    /* zentriert */
-      }
+    }
+
+    .homecontent p {
+        font-size: 1.6rem; /* Behält deine Originalgröße bei */
+        margin: 1rem auto 2.5rem; /* Fügt 'auto' für die linke/rechte Margin hinzu, um das Blockelement zu zentrieren */
+        overflow-wrap: break-word;
+        text-align: center; /* ZENTRIERT DEN TEXT INNEN */
+        max-width: 500px; /* Optional: Setze hier eine max-width, wenn der Text bei 90vw zu breit wird */
+    }
 
     .homeimage .imagebox {
         width: 35rem;
@@ -796,6 +971,12 @@ section.active {
     .homecontent .button .sci {
         margin-left: 0;
         margin-bottom: 2rem;
+    }
+
+    .homeimage .imagebox .imageitem img {
+        /* HIER IST DIE ANPASSUNG */
+        top: 1rem; /* Leicht nach oben verschieben, falls es zu weit unten ist */
+        width: 90%; /* WICHTIG: Erhöht die Größe des Bildes im Kreis */
     }
 
     .profilecontainer,
@@ -817,11 +998,144 @@ section.active {
     }
 }
 
-/*600px*/
-@media screen and (max-width: 600px) {
+/*425px*/
+@media screen and (max-width: 425px) {
+    html {
+        font-size: 55%;
+    }
+
+    .homecontent,
+    .profilebox h2,
+    .profilebox .heading,
+    .profilebox .desc,
+    .profiledetail.about .profileitem {
+        text-align: center;
+    }
+
+    .homecontent .button {
+        flex-direction: column-reverse;
+    }
+
+    .homecontent .button .sci {
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+
+    .homeimage .imagebox .imageitem img {
+        /* HIER IST DIE ANPASSUNG */
+        top: 1rem; /* Leicht nach oben verschieben, falls es zu weit unten ist */
+        width: 90%; /* WICHTIG: Erhöht die Größe des Bildes im Kreis */
+    }
+
+    .contactbox form {
+        padding: 2.5rem 3rem 3.5rem;
+    }
+
+    .contactbox h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/*375*/
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 56%;
+    }
+
+    .homecontent,
+    .profilebox h2,
+    .profilebox .heading,
+    .profilebox .desc,
+    .profiledetail.about .profileitem {
+        text-align: center;
+    }
+
+    .home {
+        gap: 1.5rem;
+        padding: 8rem 1rem 3rem;
+        min-height: calc(100vh - 11rem);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .homecontent h1 {
+        font-size: clamp(2.8rem, 8.5vw, 3.8rem);
+        line-height: 1.2;
+    }
+
+    .homecontent h2 {
+        font-size: 2.2rem;
+        margin-top: .3rem;
+    }
+
+    .homecontent p {
+        font-size: 1rem;
+        margin: 0.8rem auto 1.5rem;
+        max-width: 350px;
+    }
+
+    .homecontent .button {
+        flex-direction: column; /* Sicherstellen, dass sie untereinander bleiben */
+        align-items: center; /* Sicherstellen, dass sie mittig sind */
+        gap: 1.2rem;
+    }
+
+    .homecontent .button .sci {
+        margin-left: 0; /* Alte Ränder entfernen */
+        margin-bottom: 1.5rem;
+        gap: 1rem;
+    }
+
+    .buttons {
+        padding: 0.9rem 2.8rem;
+        font-size: 1rem;
+        /* Optional: Falls der Text im Button auch verrutscht, line-height anpassen */
+        line-height: 1; /* Oft hilft dies, Text/Icons vertikal zu zentrieren */
+        display: inline-flex; /* Damit align-items/justify-content greifen können */
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ************************************************************ */
+    /* ANPASSUNG FÜR ICON-BILDER IN BUTTONS (SCI) */
+    /* ************************************************************ */
+    .homecontent .button .sci a {
+        padding: .7rem; /* Etwas mehr Padding, um Icons Raum zu geben */
+        font-size: 1.5rem; /* Icon-Größe anpassen */
+        display: inline-flex; /* Wichtig: Ermöglicht vertikale Zentrierung */
+        justify-content: center; /* Horizontale Zentrierung des Icons im Kreis */
+        align-items: center; /* Vertikale Zentrierung des Icons im Kreis */
+        line-height: 1; /* Sicherstellen, dass der Icon-Font nicht unnötigen Zeilenabstand erzeugt */
+    }
+
+
+    /* ************************************************************ */
+    /* ANPASSUNG FÜR HAUPTBILD INNERHALB DER BOX */
+    /* ************************************************************ */
     .homeimage .imagebox {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .homeimage .imagebox::before,
+    .homeimage .imagebox::after {
         width: 30rem;
         height: 30rem;
+    }
+
+    .homeimage .imagebox .imageitem img {
+        top: 2rem; /* WICHTIG: Erhöht den top-Wert, um das Bild weiter nach unten zu verschieben */
+        width: 85%; /* WICHTIG: Das Bild innerhalb der Box etwas größer machen, z.B. von 75% auf 85% */
+        height: auto; /* Stellt sicher, dass das Seitenverhältnis beibehalten wird */
+        object-fit: contain; /* Stellt sicher, dass das Bild in die Box passt, ohne zu clippen */
+    }
+
+    .contactbox form {
+        padding: 2rem 1.2rem 2.5rem;
+    }
+
+    .contactbox h2 {
+        font-size: 3rem;
     }
 
     .contactbox .fieldbox {
@@ -829,15 +1143,12 @@ section.active {
     }
 }
 
-/*450px*/
-@media screen and (max-width: 450px) {
-    html {
-        font-size: 50%;
-    }
-}
 
-/*425px*/
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 325px) {
+    html {
+        font-size: 57%;
+    }
+
     .homecontent,
     .profilebox h2,
     .profilebox .heading,
@@ -846,64 +1157,181 @@ section.active {
         text-align: center;
     }
 
+    .home {
+        gap: 1.2rem;
+        /* KEIN min-height: 100vh ODER calc() HIER */
+        /* Paddings direkt setzen, um den Inhalt nach unten zu schieben */
+        padding: 8rem 0.8rem 2.5rem; /* Oben 8rem, Unten 2.5rem, Seiten 0.8rem */
+        /* justify-content und align-items können bleiben, haben aber eine andere Wirkung */
+        justify-content: center; /* Zentriert den Inhalt innerhalb des verfügbaren Raums */
+        align-items: center;
+        min-height: auto; /* Lassen wir die Höhe vom Inhalt bestimmen */
+    }
+
+    .homecontent h1 {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+        line-height: 1.2;
+    }
+
+    .homecontent h2 {
+        font-size: 2rem;
+        margin-top: .2rem;
+    }
+
+    .homecontent p {
+        font-size: 0.95rem;
+        margin: 0.7rem auto 1.5rem;
+        max-width: 290px;
+    }
+
     .homecontent .button {
-        flex-direction: column-reverse;
+        gap: 1rem;
     }
 
     .homecontent .button .sci {
-        margin-left: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+        gap: 0.8rem;
+    }
+
+    .buttons {
+        padding: 0.8rem 2.5rem;
+        font-size: 0.95rem;
+    }
+
+    .homecontent .button .sci a {
+        padding: .5rem;
+        font-size: 1.25rem;
+    }
+
+    .homeimage .imagebox {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .homeimage .imagebox::before,
+    .homeimage .imagebox::after {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .homeimage .imagebox .imageitem img {
+        top: 1rem;
+        width: 85%;
     }
 
     .contactbox form {
-        padding: 2.5rem 3rem 3.5rem;
+        padding: 2rem 1.2rem 2.5rem;
     }
 
     .contactbox h2 {
-        font-size: 3.5rem;
+        font-size: 3rem;
+    }
+
+    .contactbox .fieldbox {
+        grid-template-columns: 1fr;
     }
 }
 
-/*400px*/
-@media screen and (max-width: 400px) {
-    .homecontent,
-    .profilebox h2,
-    .profilebox .heading,
-    .profilebox .desc,
-    .profiledetail.about .profileitem {
-        text-align: center;
-    }
 
-    .homecontent .button {
-        flex-direction: column-reverse;
-    }
-
-    .homecontent .button .sci {
-        margin-left: 0;
-        margin-bottom: 2rem;
-    }
-
-    .contactbox form {
-        padding: 2.5rem 3rem 3.5rem;
-    }
-
-    .contactbox h2 {
-        font-size: 3.5rem;
-    }
-}
-
-/*1440px*/
-@media screen and (min-width: 1440px) {
-    html {
-        font-size: 80%;
-    }
-}
 
 /*2560px*/
+
 @media screen and (min-width: 2560px) {
     html {
-        font-size: 120%;
+        font-size: 100%;
     }
 
-}
+    .home {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 180px;
+        padding: 180px 0;
+        min-height: 100vh;
+        width: 1800px; /* Feste Breite für den Home-Container */
+        margin: 0 auto; /* Zentriert den Home-Container */
+        overflow: hidden; /* Zusätzliche Absicherung gegen Home-spezifisches Überlaufen */
+    }
 
+    .homecontent {
+        width: 800px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        text-align: left;
+    }
+
+    .homecontent h1 {
+        font-size: 80px;
+        line-height: 1.1;
+    }
+
+    .homecontent h2 {
+        font-size: 55px;
+        margin-top: 15px;
+    }
+
+    .homecontent p {
+        font-size: 35px;
+        margin: 30px 0 60px;
+    }
+
+    .homecontent .button {
+        gap: 40px;
+    }
+
+    .homecontent .button .sci {
+        margin-left: 40px;
+        gap: 25px;
+    }
+
+    .buttons {
+        padding: 25px 60px;
+        font-size: 20px;
+    }
+
+    .homecontent .button .sci a {
+        padding: 18px;
+        font-size: 35px;
+    }
+
+    .homeimage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .homeimage .imagebox {
+        width: 900px;
+        height: 900px;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    .homeimage .imagebox::before,
+    .homeimage .imagebox::after {
+        width: 1000px;
+        height: 1000px;
+    }
+
+    .homeimage .imagebox .imageitem img {
+        top: 40px;
+        width: 85%;
+    }
+
+    .profilecontainer,
+    .portfoliocontainer,
+    .contactcontainer {
+        gap: 120px;
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+
+    .contactbox form {
+        padding: 90px 120px;
+    }
+
+    .contactbox h2 {
+        font-size: 90px;
+    }
+}

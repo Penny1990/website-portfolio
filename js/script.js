@@ -30,25 +30,26 @@ if (profilebuttons.length > 0) {
     });
 }
 
-// HIER BEGINNT DER PORTFOLIO-CODE-BLOCK FÜR SOFORTIGES AUSGRAUEN (MIT maxIndex = 2)
-const portfolioBox = document.querySelector('.portfoliobox');
-if (portfolioBox) {
-    const arrowRight = portfolioBox.querySelector('.navigation .arrowright');
-    const arrowLeft = portfolioBox.querySelector('.portfoliobox .navigation .arrowleft');
+
+const portfolioBoxes = document.querySelectorAll('.portfoliobox');
+const carouselPortfolioBox = portfolioBoxes[1];
+const textPortfolioBox = portfolioBoxes[0];
+
+if (carouselPortfolioBox && textPortfolioBox) {
+
+    const arrowRight = carouselPortfolioBox.querySelector('.navigation .arrowright');
+    const arrowLeft = carouselPortfolioBox.querySelector('.navigation .arrowleft');
 
     let index = 0;
+    const maxIndex = 2; 
 
-    // MaxIndex ist 2 für 3 Elemente (0, 1, 2)
-    const maxIndex = 2; // Dies ist der letzte gültige Index!
-
-    // HELFER-FUNKTION: Aktualisiert den Zustand der Pfeile basierend auf dem aktuellen Index
-    // Diese Funktion sorgt dafür, dass die Pfeile sofort ausgegraut werden, wenn der Index die Grenze erreicht
+    
     const updateArrowStates = () => {
         if (arrowLeft) {
-            if (index === 0) { // Wenn am Anfang (Index 0)
+            if (index === 0) { // 
                 arrowLeft.classList.add('disabled');
             } else {
-                arrowLeft.classList.remove('disabled'); // Ansonsten aktivieren
+                arrowLeft.classList.remove('disabled'); 
             }
         }
 
@@ -62,8 +63,8 @@ if (portfolioBox) {
     };
 
     const activePortfolio = () => {
-        const imgSlide = portfolioBox.querySelector('.portfoliocarousel .imageslide');
-        const portfolioDetails = portfolioBox.querySelectorAll('.portfoliodetail');
+        const imgSlide = carouselPortfolioBox.querySelector('.portfoliocarousel .imageslide');
+        const portfolioDetails = textPortfolioBox.querySelectorAll('.portfoliodetail');
 
         if (imgSlide) {
             imgSlide.style.transform = `translateX(calc(${index * -100}% - ${index * 2}rem))`;
@@ -76,35 +77,32 @@ if (portfolioBox) {
             portfolioDetails[index].classList.add('active');
         }
     };
-
-    // Event-Listener für den rechten Pfeil
+    
     if (arrowRight) {
         arrowRight.addEventListener('click', () => {
-            if (index < maxIndex) { // Wenn der Index kleiner ist als 2 (also 0 oder 1)
-                index++; // Index erhöhen
+            if (index < maxIndex) { 
+                index++; 
             }
-            activePortfolio();      // Inhalt wechseln
-            updateArrowStates();    // Pfeil-Status sofort aktualisieren
+            activePortfolio();      
+            updateArrowStates();    
         });
     }
 
-    // Event-Listener für den linken Pfeil
     if (arrowLeft) {
         arrowLeft.addEventListener('click', () => {
-            if (index > 0) { // Wenn der Index größer als 0 ist (also 1 oder 2)
-                index--; // Index verringern
+            if (index > 0) { 
+                index--; 
             }
-            activePortfolio();      // Inhalt wechseln
-            updateArrowStates();    // Pfeil-Status sofort aktualisieren
+            activePortfolio();     
+            updateArrowStates();    
         });
     }
 
-    // Initialer Aufruf beim Laden der Portfolioseite
-    // Setzt den Startzustand der Pfeile und zeigt das erste Portfolio-Element
-    activePortfolio();      // Zeigt das erste Element an (Index 0)
-    updateArrowStates();    // Setzt den Pfeil-Status für den Start (linker Pfeil disabled)
 
-} // ENDE DES PORTFOLIO-CODE-BLOCKS
+    activePortfolio();      
+    updateArrowStates();    
+
+} 
 
 
   
@@ -117,3 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
         currentMainSection.classList.add('active');
     }
 });
+
+
+
+function closeqrgruss() {
+  const el = document.getElementById('qrgruss');
+  if (el) {
+    el.style.display = 'none';
+  }
+}

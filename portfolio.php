@@ -93,13 +93,14 @@
                             <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
                         </div>
                     </div>
+                --->
                 </div>
-            -->
+
                 <div class="portfoliobox">
                     <div class="portfoliocarousel">
                         <div class="imageslide">
                             <div class="imageitem">
-                                <img src="images/placeholder1.png">
+                                <img src="images/websitefoto.png">
                             </div>
                             <div class="imageitem">
                                 <img src="images/placeholder2.png">

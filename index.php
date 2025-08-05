@@ -19,7 +19,17 @@
 
 <body>
 
-    
+    <?php
+    $WillkommenQR = isset($_GET['qr']) && $_GET['qr'] === 'true';
+    ?>
+
+    <?php if ($WillkommenQR): ?>
+        <div class="qr-gruss" id="qrgruss">
+            <h2>Willkommen auf meiner Website</h2>
+            <p>Danke fürs Scannen des QR-Codes und viel Spaß beim stöbern</p>
+            <button onclick="closeqrgruss()">Schließen</button>
+        </div>
+    <?php endif; ?>
 
     <?php include('header.php'); ?>
 
@@ -30,7 +40,7 @@
                 <h2>Angehende<br> Fachinformatikerin <br>Anwendungsentwicklung</h2>
                 <p>Familienprofi trifft IT - Mit Herz und Verstand die digitale Zukunft gestalten</p>
                 <div class="button">
-                    <a href="#" class="buttons">Download CV</a>
+                    <a href="download.php" class="buttons">Lebenslauf</a>
                     <div class="sci">
                         <a href="https://linkedin.com/in/stefanie-riewoldt"><i class='bx bxl-linkedin'></i></a>
                         <a href="https://github.com/Penny1990"><i class='bx bxl-github' ></i></a>
